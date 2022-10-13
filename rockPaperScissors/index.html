@@ -9,18 +9,25 @@
   </head>
   <body>
     <h1 class="title">ROCK PAPER SCISSORS</h1>
-    <p class="tagline">CHOOSE WISELY TO DEFEAT THE UNDEAD</p>
-    <div class="selection-container">
-      <img class="button" src="" alt="ROCK" />
-      <img class="button" src="" alt="PAPER" />
-      <img class="button" src="" alt="SCISSORS" />
+    <h2 class="description">Time to save the world!</h2>
+    <div class="game-container" id="game-container">
+      <div class="choice-container">
+        <div class="choice" id="rock">ROCK</div>
+        <div class="choice" id="paper">PAPER</div>
+        <div class="choice" id="scissors">SCISSORS</div>
+      </div>
+      <div class="play-button" id="play-button">PLAY GAME</div>
+      <div class="score-container">
+        <div class="player-score-container">
+          <div class="player-score-text">PLAYER SCORE</div>
+          <div class="player-score" id="playerscore">3</div>
+        </div>
+        <div class="computer-score-container">
+          <div class="computer-score-text">COMPUTER SCORE</div>
+          <div class="computer-score" id="computer-score">2</div>
+        </div>
+      </div>
     </div>
-    <p class="score-title">CURRENT SCORE</p>
-    <div class="scores-container">
-      <p class="scores player-score">3</p>
-      <p class="scores computer-score">1</p>
-    </div>
-    <div class="overlay hidden"></div>
     <script src="script.js"></script>
   </body>
 </html>
