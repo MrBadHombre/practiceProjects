@@ -3,49 +3,41 @@ const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 // let computerSelection = Math.floor(Math.random() * 3);
-function winner() {
-  let computerScore = 0;
-  let playerScore = 0;
-  let playerSelection = 1;
-  let computerSelection = Math.floor(Math.random() * 3);
+function winner(playerScore, computerScore) {
+  computerScore = 0;
+  playerScore = 0;
+
   if (
     (playerSelection === 1 && computerSelection === 2) ||
     (playerSelection === 2 && computerSelection === 3) ||
     (playerSelection === 3 && computerSelection === 1)
   ) {
-    computerScore++;
-    console.log('you lose');
+    console.log(playerSelection);
+    console.log(computerSelection);
   } else if (playerSelection === computerSelection) {
-    // draw alert
+    console.log(playerSelection);
+    console.log(computerSelection);
   } else {
-    playerScore++;
-    console.log('you win');
+    console.log(playerSelection);
+    console.log(computerSelection);
   }
 }
-
 rock.addEventListener('click', function () {
-  let computerScore = 0;
-  let playerScore = 0;
-  let playerSelection = 1;
-  let computerSelection = Math.floor(Math.random() * 3) + 1;
-  if (
-    (playerSelection === 1 && computerSelection === 2) ||
-    (playerSelection === 2 && computerSelection === 3) ||
-    (playerSelection === 3 && computerSelection === 1)
-  ) {
-    computerScore++;
-    console.log('you lose');
-    console.log(playerSelection);
-  } else if (playerSelection === computerSelection) {
-    console.log(playerSelection);
-    // draw alert
-  } else {
-    playerScore++;
-    console.log('you win');
-
-    console.log(playerSelection);
-  }
+  playerSelection = 1;
+  computerSelection = Math.floor(Math.random() * 3) + 1;
+  winner();
 });
+paper.addEventListener('click', function () {
+  playerSelection = 2;
+  computerSelection = Math.floor(Math.random() * 3) + 1;
+  winner();
+});
+scissors.addEventListener('click', function () {
+  playerSelection = 3;
+  computerSelection = Math.floor(Math.random() * 3) + 1;
+  winner();
+});
+
 //   paper.addEventListener('click', function () {
 //     playerSelection = 2;
 //     return playerSelection;
