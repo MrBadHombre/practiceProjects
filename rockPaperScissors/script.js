@@ -2,42 +2,58 @@
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
-// let computerSelection = Math.floor(Math.random() * 3);
-function winner(playerScore, computerScore) {
-  computerScore = 0;
-  playerScore = 0;
+const playerScore = document.querySelector('.player-score');
+const computerScore = document.querySelector('.computer-score');
+const reset = document.querySelector('#reset-button');
 
-  if (
+function resetGame() {
+  playScore = 0;
+  compScore = 0;
+  playerScore.innerHTML = 0;
+  computerScore.innerHTML = 0;
+  console.log('reset');
+}
+// let computerSelection = Math.floor(Math.random() * 3);
+function playGame() {
+  if (compScore === 5 || playScore === 5) {
+    resetGame();
+    console.log('init');
+  } else if (
     (playerSelection === 1 && computerSelection === 2) ||
     (playerSelection === 2 && computerSelection === 3) ||
     (playerSelection === 3 && computerSelection === 1)
   ) {
-    console.log(playerSelection);
-    console.log(computerSelection);
+    console.log('you lose');
+    compScore++;
+    computerScore.innerHTML = compScore;
   } else if (playerSelection === computerSelection) {
-    console.log(playerSelection);
-    console.log(computerSelection);
+    console.log('draw');
   } else {
-    console.log(playerSelection);
-    console.log(computerSelection);
+    playScore++;
+    playerScore.innerHTML = playScore;
+    console.log('you win!');
   }
 }
+
 rock.addEventListener('click', function () {
   playerSelection = 1;
   computerSelection = Math.floor(Math.random() * 3) + 1;
-  winner();
+  playGame();
 });
 paper.addEventListener('click', function () {
   playerSelection = 2;
   computerSelection = Math.floor(Math.random() * 3) + 1;
-  winner();
+  playGame();
 });
 scissors.addEventListener('click', function () {
   playerSelection = 3;
   computerSelection = Math.floor(Math.random() * 3) + 1;
-  winner();
+  playGame();
 });
 
+reset.addEventListener('click', resetGame);
+
+resetGame();
 //   paper.addEventListener('click', function () {
 //     playerSelection = 2;
 //     return playerSelection;
@@ -63,12 +79,12 @@ scissors.addEventListener('click', function () {
 
 // computer selection
 
-// compare to determine winner
+// compare to determine playGame
 
 // add score to total
 
 // socre > 5 play again
 
-// score = 5 determine winner
+// score = 5 determine playGame
 
 // ask to play again
