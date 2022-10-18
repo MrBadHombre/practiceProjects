@@ -1,35 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Lato&family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Lato&family=Silkscreen&display=swap');
-
-html {
+* {
   box-sizing: border-box;
-  font-size: 24px;
+  color: #d91309;
+  font-family: 'Source Code Pro';
+  letter-spacing: 0.5rem;
+  font-family: 'Covered By Your Grace';
 }
-
-body {
-  margin: 0;
-  min-height: 100vh;
+html {
+  background-image: url('/img/stranger-things-title.png');
+  background-size: auto;
+  font-family: 'Covered By Your Grace';
+  height: 100vh;
+  background-size: cover;
+}
+.container-all {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, -0%);
 }
-
+.description {
+  text-align: center;
+  font-size: 3rem;
+}
 .game-container {
-  align-items: center;
-  justify-content: center;
-  justify-content: center;
+  font-size: 2rem;
+  margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .choice-container {
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  gap: 200px;
 }
 
+.icon {
+  background-color: rgba(240, 255, 255, 0.534);
+  max-height: 200px;
+  padding: 20px;
+  border-radius: 25px;
+}
+.result-text {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
 .score-container {
+  text-align: center;
+  gap: 100px;
   display: flex;
+}
+
+.reset-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+.hidden-win {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  font-size: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.win-message {
+  margin-bottom: 20px;
+}
+.win-play-again {
+  font-size: 3.5rem;
+  border-radius: 15px;
+}
+
+.hidden-lose {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  font-size: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.lose-message {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.lose-play-again {
+  font-size: 3.5rem;
+  border-radius: 15px;
 }
