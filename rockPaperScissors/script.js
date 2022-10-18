@@ -1,23 +1,34 @@
-// function playerChoice(playerSelection) {
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 const playerScore = document.querySelector('.player-score');
 const computerScore = document.querySelector('.computer-score');
 const reset = document.querySelector('#reset-button');
+const playAgainWin = document.querySelector('.hidden-win');
+const playAgainLose = document.querySelector('.hidden-lose');
+const winReplayBtn = document.querySelector('.win-play-again');
+const loseReplayBtn = document.querySelector('.lose-play-again');
 
+const gameGraphics = document.querySelector('.choice-container');
 function resetGame() {
+  playAgainWin.style.display = 'none';
+  playAgainLose.style.display = 'none';
+  gameGraphics.style.display = 'flex';
+
   playScore = 0;
   compScore = 0;
   playerScore.innerHTML = 0;
   computerScore.innerHTML = 0;
   console.log('reset');
 }
-// let computerSelection = Math.floor(Math.random() * 3);
+
 function playGame() {
-  if (compScore === 5 || playScore === 5) {
-    resetGame();
-    console.log('init');
+  if (playScore === 5) {
+    playAgainWin.style.display = 'flex';
+    gameGraphics.style.display = 'none';
+  } else if (compScore === 5) {
+    playAgainLose.style.display = 'flex';
+    gameGraphics.style.display = 'none';
   } else if (
     (playerSelection === 1 && computerSelection === 2) ||
     (playerSelection === 2 && computerSelection === 3) ||
@@ -52,39 +63,7 @@ scissors.addEventListener('click', function () {
 });
 
 reset.addEventListener('click', resetGame);
-
+winReplayBtn.addEventListener('click', resetGame);
 resetGame();
-//   paper.addEventListener('click', function () {
-//     playerSelection = 2;
-//     return playerSelection;
-//   });
-//   scissors.addEventListener('click', function () {
-//     playerSelection = 3;
-//     return playerSelection;
-//   });
-//   if (
-//     (playerSelection === 1 && computerSelection === 2) ||
-//     (playerSelection === 2 && computerSelection === 3) ||
-//     (playerSelection === 3 && computerSelection === 1)
-//   ) {
-//     computerScore++;
-//     console.log('you lose');
-//   } else if (playerSelection === computerSelection) {
-//     // draw alert
-//   } else {
-//     playerScore++;
-//   }
-//   console.log(playerSelection);
-// }
-
-// computer selection
-
-// compare to determine playGame
-
-// add score to total
-
-// socre > 5 play again
-
-// score = 5 determine playGame
-
-// ask to play again
+loseReplayBtn.addEventListener('click', resetGame);
+resetGame();
