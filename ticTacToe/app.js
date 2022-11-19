@@ -1,3 +1,4 @@
+//test2
 // create grid -----
 // style grid and page -----
 // store each grid item in an array -----
