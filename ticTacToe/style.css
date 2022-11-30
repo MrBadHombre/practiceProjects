@@ -7,7 +7,45 @@ body {
   min-height: 100vh;
 }
 
-#gameboard {
+#goodGuys {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  gap: 10px;
+}
+.playerChoicesBad {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+
+  border-radius: 10px;
+}
+
+#badGuys {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  gap: 10px;
+}
+.playerChoicesGood {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+
+  border-radius: 10px;
+}
+
+.gameboard {
   display: grid;
   grid-template-columns: 200px 200px 200px;
   grid-template-rows: 200px 200px 200px;
@@ -24,4 +62,19 @@ body {
   background-color: grey;
 
   border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#playGame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: none;
+  background-color: brown;
+  width: 400px;
+  height: 50px;
 }

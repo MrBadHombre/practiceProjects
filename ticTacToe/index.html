@@ -21,16 +21,90 @@
     <title>Template</title>
   </head>
   <body>
-    <div id="gameboard">
-      <div class="spaces" id="space1">one</div>
-      <div class="spaces" id="space2">two</div>
-      <div class="spaces" id="space3">three</div>
-      <div class="spaces" id="space4">four</div>
-      <div class="spaces" id="space5">five</div>
-      <div class="spaces" id="space6">six</div>
-      <div class="spaces" id="space7">seven</div>
-      <div class="spaces" id="space8">eight</div>
-      <div class="spaces" id="space9">nine</div>
+    <div class="playerOneScore hidden">
+      <div class="name1">Player 1</div>
+      <div class="score1">0</div>
+    </div>
+    <div class="playerTwoScore hidden">
+      <div class="name2">Player 2</div>
+      <div class="score2">0</div>
+    </div>
+
+    <div id="startscreen">
+      <button id="playGame">PLAY GAME</button>
+    </div>
+    <div class="playerSelectionScreenOne hidden">
+      <div id="goodGuys">
+        <div class="playerChoicesGood" id="goodGuy1">
+          <img src="" alt="one" />
+        </div>
+        <div class="playerChoicesGood" id="goodGuy3">
+          <img src="" alt="three" />
+        </div>
+        <div class="playerChoicesGood" id="goodGuy2">
+          <img src="" alt="two" />
+        </div>
+        <div class="playerChoicesGood" id="goodGuy4">
+          <img src="" alt="four" />
+        </div>
+        <div class="playerChoicesGood" id="goodGuy5">
+          <img src="" alt="five" />
+        </div>
+        <div class="playerChoicesGood" id="goodGuy6">
+          <img src="" alt="six" />
+        </div>
+        <div class="playerChoicesGood" id="goodGuy7">
+          <img src="" alt="seven" />
+        </div>
+        <div class="playerChoicesGood" id="goodGuy8">
+          <img src="" alt="eight" />
+        </div>
+        <div class="playerChoicesGood" id="goodGuy9">
+          <img src="" alt="nine" />
+        </div>
+      </div>
+    </div>
+    <div class="playerSelectionScreenTwo hidden">
+      <div id="badGuys">
+        <div class="playerChoicesBad" id="badGuy1">
+          <img src="" alt="seven" />
+        </div>
+        <div class="playerChoicesBad" id="badGuy2">
+          <img src="" alt="eight" />
+        </div>
+        <div class="playerChoicesBad" id="badGuy3">
+          <img src="" alt="nine" />
+        </div>
+        <div class="playerChoicesBad" id="badGuy4">
+          <img src="" alt="ten" />
+        </div>
+        <div class="playerChoicesBad" id="badGuy5">
+          <img src="" alt="eleven" />
+        </div>
+        <div class="playerChoicesBad" id="badGuy6">
+          <img src="" alt="twelve" />
+        </div>
+        <div class="playerChoicesBad" id="badGuy4">
+          <img src="" alt="ten" />
+        </div>
+        <div class="playerChoicesBad" id="badGuy5">
+          <img src="" alt="eleven" />
+        </div>
+        <div class="playerChoicesBad" id="badGuy6">
+          <img src="" alt="twelve" />
+        </div>
+      </div>
+    </div>
+    <div class="gameboard hidden">
+      <div class="spaces" id="space1"></div>
+      <div class="spaces" id="space2"></div>
+      <div class="spaces" id="space3"></div>
+      <div class="spaces" id="space4"></div>
+      <div class="spaces" id="space5"></div>
+      <div class="spaces" id="space6"></div>
+      <div class="spaces" id="space7"></div>
+      <div class="spaces" id="space8"></div>
+      <div class="spaces" id="space9"></div>
     </div>
 
     <script src="app.js"></script>

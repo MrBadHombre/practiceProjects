@@ -21,7 +21,12 @@ const playerChoicesGood = document.querySelectorAll('.playerChoicesGood');
 const playerSelectionScreenOne = document.querySelector(
   '.playerSelectionScreenOne'
 );
-
+const playerChoicesBad = document.querySelectorAll('.playerChoicesBad');
+const playerSelectionScreentwo = document.querySelector(
+  '.playerSelectionScreenTwo'
+);
+const playerOneScoreDisplay = document.querySelector('.playerOneScore');
+const playerTwoScoreDisplay = document.querySelector('.playerTwoScore');
 // start screen
 
 startButton.addEventListener('click', () => {
@@ -39,6 +44,19 @@ for (let i = 0; i < goodGuysArray.length; i++)
     let player1 = goodGuysArray[i];
     console.log(player1);
     playerSelectionScreenOne.classList.add('hidden');
+    playerSelectionScreentwo.classList.remove('hidden');
+  });
+// player 2 character selection screen
+
+badGuysArray = Array.from(playerChoicesBad);
+for (let i = 0; i < badGuysArray.length; i++)
+  badGuysArray[i].addEventListener('click', () => {
+    let player2 = badGuysArray[i];
+    console.log(player2);
+    gameBoard.classList.remove('hidden');
+    playerSelectionScreentwo.classList.add('hidden');
+    playerOneScoreDisplay.classList.remove('hidden');
+    playerTwoScoreDisplay.classList.remove('hidden');
   });
 
 // gameboard creation
