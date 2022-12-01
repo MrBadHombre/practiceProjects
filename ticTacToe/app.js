@@ -8,7 +8,9 @@
 // make function to create players
 // create game function
 // refactor code
-
+let player1;
+let player2 = document.createElement('div');
+player2.innerHTML = `demogorgan.jpeg`;
 let player;
 let spacesArray = [];
 let activePlayer = 'player1';
@@ -21,10 +23,11 @@ const playerChoicesGood = document.querySelectorAll('.playerChoicesGood');
 const playerSelectionScreenOne = document.querySelector(
   '.playerSelectionScreenOne'
 );
-const playerChoicesBad = document.querySelectorAll('.playerChoicesBad');
-const playerSelectionScreentwo = document.querySelector(
-  '.playerSelectionScreenTwo'
-);
+
+// const playerChoicesBad = document.querySelectorAll('.playerChoicesBad');
+// const playerSelectionScreentwo = document.querySelector(
+//   '.playerSelectionScreenTwo'
+// );
 const playerOneScoreDisplay = document.querySelector('.playerOneScore');
 const playerTwoScoreDisplay = document.querySelector('.playerTwoScore');
 // start screen
@@ -39,43 +42,64 @@ startButton.addEventListener('click', () => {
 // player 1 character selection screen
 
 goodGuysArray = Array.from(playerChoicesGood);
+
 for (let i = 0; i < goodGuysArray.length; i++)
   goodGuysArray[i].addEventListener('click', () => {
-    let player1 = goodGuysArray[i];
+    player1 = goodGuysArray[i];
     console.log(player1);
+
     playerSelectionScreenOne.classList.add('hidden');
-    playerSelectionScreentwo.classList.remove('hidden');
+
+    gameBoard.classList.remove('hidden');
+
+    playerOneScoreDisplay.classList.remove('hidden');
+    playerTwoScoreDisplay.classList.remove('hidden');
+    player2.innerHTML = `<img src='demogorgan.jpeg' alt "demogorgan"/>`;
+    return player1, player2;
   });
 // player 2 character selection screen
 
-badGuysArray = Array.from(playerChoicesBad);
-for (let i = 0; i < badGuysArray.length; i++)
-  badGuysArray[i].addEventListener('click', () => {
-    let player2 = badGuysArray[i];
-    console.log(player2);
-    gameBoard.classList.remove('hidden');
-    playerSelectionScreentwo.classList.add('hidden');
-    playerOneScoreDisplay.classList.remove('hidden');
-    playerTwoScoreDisplay.classList.remove('hidden');
-  });
+// badGuysArray = Array.from(playerChoicesBad);
+// for (let i = 0; i < badGuysArray.length; i++)
+//   badGuysArray[i].addEventListener('click', () => {
+//     let player2 = badGuysArray[i];
+//     console.log(player2);
+//     gameBoard.classList.remove('hidden');
+//     playerSelectionScreentwo.classList.add('hidden');
+//     playerOneScoreDisplay.classList.remove('hidden');
+//     playerTwoScoreDisplay.classList.remove('hidden');
+//   });
 
 // gameboard creation
 spacesArray = Array.from(gameSpaces);
 console.log(spacesArray);
-
+let player1Array = [];
 for (let i = 0; i < spacesArray.length; i++) {
-  spacesArray[i].textContent = '';
   spacesArray[i].addEventListener('click', function playerChoice(event) {
-    if (activePlayer == 'player1' && spacesArray[i].textContent == '') {
-      spacesArray[i].textContent = 'x';
-      player1Score.push(spacesArray.indexOf(spacesArray[i]));
-      console.log(player1Score);
+    if (playerWins()) {
+      console.log('player1wins');
+    }
+    if (activePlayer == 'player1' && spacesArray[i].innerHTML == '') {
+      spacesArray[i].innerHTML = player1.innerHTML;
+      player1Array.push(spacesArray[i]);
+      console.log(player1Array);
       activePlayer = 'player2';
-    } else if (activePlayer == 'player2' && spacesArray[i].textContent == '') {
-      spacesArray[i].textContent = 'o';
+    } else if (activePlayer == 'player2' && spacesArray[i].innerHTML == '') {
+      spacesArray[i].innerHTML = player2.innerHTML;
       activePlayer = 'player1';
     } else {
       activePlayer = activePlayer;
     }
   });
+}
+console.log(player2, player1);
+
+function playerWins() {
+  if (
+    spacesArray[0].innerHTML == player1.innerHTML &&
+    spacesArray[1].innerHTML == player1.innerHTML &&
+    spacesArray[2].innerHTML == player1.innerHTML
+  ) {
+    console.log('player1wins');
+  }
 }
