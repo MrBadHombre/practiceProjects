@@ -11,7 +11,7 @@
 let player1;
 let player2 = document.createElement('div');
 player2.innerHTML = `demogorgan.jpeg`;
-let player;
+
 let spacesArray = [];
 let activePlayer = 'player1';
 let player1Score = [];
@@ -74,20 +74,25 @@ for (let i = 0; i < goodGuysArray.length; i++)
 spacesArray = Array.from(gameSpaces);
 console.log(spacesArray);
 let player1Array = [];
+let player2Array = [];
 for (let i = 0; i < spacesArray.length; i++) {
   spacesArray[i].addEventListener('click', function playerChoice(event) {
     if (activePlayer == 'player1' && spacesArray[i].innerHTML == '') {
       spacesArray[i].innerHTML = player1.innerHTML;
       player1Array.push(spacesArray[i]);
-      console.log(player1Array);
-      if (playerWins()) {
-        console.log('player1wins');
+      if (playerWins(player1)) {
+        alert('player 1 wins!!!');
       } else {
         activePlayer = 'player2';
       }
     } else if (activePlayer == 'player2' && spacesArray[i].innerHTML == '') {
       spacesArray[i].innerHTML = player2.innerHTML;
-      activePlayer = 'player1';
+      player2Array.push(spacesArray[i]);
+      if (playerWins(player2)) {
+        alert('player 2 wins!!!');
+      } else {
+        activePlayer = 'player1';
+      }
     } else {
       activePlayer = activePlayer;
     }
@@ -95,12 +100,14 @@ for (let i = 0; i < spacesArray.length; i++) {
 }
 console.log(player2, player1);
 
-function playerWins() {
+function playerWins(player) {
   if (
-    spacesArray[0].innerHTML == player1.innerHTML &&
-    spacesArray[1].innerHTML == player1.innerHTML &&
-    spacesArray[2].innerHTML == player1.innerHTML
+    spacesArray[0].innerHTML == player.innerHTML &&
+    spacesArray[1].innerHTML == player.innerHTML &&
+    spacesArray[2].innerHTML == player.innerHTML
   ) {
-    console.log('player1wins');
+    return true;
+  } else {
+    return false;
   }
 }
