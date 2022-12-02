@@ -76,14 +76,15 @@ console.log(spacesArray);
 let player1Array = [];
 for (let i = 0; i < spacesArray.length; i++) {
   spacesArray[i].addEventListener('click', function playerChoice(event) {
-    if (playerWins()) {
-      console.log('player1wins');
-    }
     if (activePlayer == 'player1' && spacesArray[i].innerHTML == '') {
       spacesArray[i].innerHTML = player1.innerHTML;
       player1Array.push(spacesArray[i]);
       console.log(player1Array);
-      activePlayer = 'player2';
+      if (playerWins()) {
+        console.log('player1wins');
+      } else {
+        activePlayer = 'player2';
+      }
     } else if (activePlayer == 'player2' && spacesArray[i].innerHTML == '') {
       spacesArray[i].innerHTML = player2.innerHTML;
       activePlayer = 'player1';
