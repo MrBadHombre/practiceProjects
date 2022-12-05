@@ -9,13 +9,16 @@
 // create game function
 // refactor code
 let player1;
-let player2 = document.createElement('div');
-player2.innerHTML = `demogorgan.jpeg`;
 
 let spacesArray = [];
 let activePlayer = 'player1';
 let player1Score = [];
 let player2Score = [];
+let player1WinScore = 0;
+let player2WinScore = 0;
+let player2 = document.createElement('div');
+let player1ScoreDisplay = document.querySelector('.score1');
+let player2ScoreDisplay = document.querySelector('.score2');
 const gameSpaces = document.querySelectorAll('.spaces');
 const gameBoard = document.querySelector('.gameboard');
 const startButton = document.querySelector('#playGame');
@@ -23,7 +26,7 @@ const playerChoicesGood = document.querySelectorAll('.playerChoicesGood');
 const playerSelectionScreenOne = document.querySelector(
   '.playerSelectionScreenOne'
 );
-
+player2.innerHTML = `demogorgan.jpeg`;
 // const playerChoicesBad = document.querySelectorAll('.playerChoicesBad');
 // const playerSelectionScreentwo = document.querySelector(
 //   '.playerSelectionScreenTwo'
@@ -82,6 +85,7 @@ for (let i = 0; i < spacesArray.length; i++) {
       player1Array.push(spacesArray[i]);
       if (playerWins(player1)) {
         alert('player 1 wins!!!');
+        player1ScoreDisplay.textContent = player1WinScore += 1;
       } else {
         activePlayer = 'player2';
       }
